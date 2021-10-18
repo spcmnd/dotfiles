@@ -6,3 +6,7 @@ Packages needed:
 - rofi
 - prezto
 
+## Tmux configuration
+
+Plugins needed:
+- [Tmux logging](https://github.com/tmux-plugins/tmux-logging)
