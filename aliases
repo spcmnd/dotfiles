@@ -1,0 +1,7 @@
+#!/bin/bash
+
+alias is-spcmnd-config-loaded="echo \"Config is loaded!\""
+
+alias code="code --disable-gpu"
+alias code="atom --disable-gpu"
+alias code="obsidian --disable-gpu"
