@@ -118,7 +118,8 @@ update_bashrc () {
 		echo "[*] Adding custom config to .bashrc..."
 		echo "" >> $bashrcPath
 		echo "# spcmnd's custom config" >> $bashrcPath
-		echo "source \"$homeDirectory/Documents/dotfiles/.bashrc\"" >> $bashrcPath
+		echo "export SPCMNDCONFIGPATH=\"$homeDirectory/Documents/dotfiles\"" >> $bashrcPath
+		echo "source \"\$SPCMNDCONFIGPATH/.bashrc\"" >> $bashrcPath
 		echo "" >> $bashrcPath
 	fi
 
