@@ -1,12 +1,13 @@
-### spcmnd's dotfiles
+# spcmnd's custom configuration script
 
-Packages needed:
-- i3
-- polybar
-- rofi
-- prezto
+This script load configuration and aliases to .bashrc or tmux.
 
-## Tmux configuration
+## Usage
 
-Plugins needed:
-- [Tmux logging](https://github.com/tmux-plugins/tmux-logging)
+Clone the repo and simply launch:
+
+```bash
+bash update-config.sh
+```
+
+And answer questions deciding what you need.

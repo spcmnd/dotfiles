@@ -128,7 +128,7 @@ update_bashrc () {
 
 main () {
 	echo "---"
-	echo "Config Updater - V1.0 - By spcmnd"
+	echo "Config Updater - V0.2 - By spcmnd"
 	echo "---"
 	echo
 	ask_pull_latest_version

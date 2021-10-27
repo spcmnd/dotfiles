@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Custom config checker
 alias is-spcmnd-config-loaded="echo \"Config is loaded!\""
 
+# VM aliases to avoid virtual GPU freezes
 alias code="code --disable-gpu"
 alias code="atom --disable-gpu"
 alias code="obsidian --disable-gpu"
+
+# Tool aliases
+alias rustscan="docker run -it --rm --name rustscan rustscan/rustscan:1.10.0"
