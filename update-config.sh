@@ -120,6 +120,7 @@ update_bashrc () {
 		echo "# spcmnd's custom config" >> $bashrcPath
 		echo "export SPCMNDCONFIGPATH=\"$homeDirectory/Documents/dotfiles\"" >> $bashrcPath
 		echo "source \"\$SPCMNDCONFIGPATH/.bashrc\"" >> $bashrcPath
+		echo "export PATH=\$PATH:/opt/bin" >> $bashrcPath
 		echo "" >> $bashrcPath
 	fi
 
@@ -129,7 +130,7 @@ update_bashrc () {
 
 main () {
 	echo "---"
-	echo "Config Updater - V0.2 - By spcmnd"
+	echo "Config Updater - V0.2.1 - By spcmnd"
 	echo "---"
 	echo
 	ask_pull_latest_version
