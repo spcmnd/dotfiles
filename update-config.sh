@@ -106,12 +106,31 @@ ask_update_bashrc () {
 	done
 }
 
+ask_update_zshrc () {
+	while true; do
+		read -p "Do you want to update your zshrc? [Y/N] " yn
+
+		case $yn in
+			[Yy]* )
+				update_zshrc
+				break
+				;;
+			[Nn]* )
+				break
+				;;
+			* )
+				echo "Please answer Y or N."
+				;;
+		esac
+	done
+}
+
 update_bashrc () {
 	bashrcPath=$homeDirectory/.bashrc
 
 	if grep -Fxq "# spcmnd's custom config" $bashrcPath
 	then
-    echo
+    		echo
 		echo "[*] Config is already loaded!"
 	else
 		echo
@@ -128,9 +147,31 @@ update_bashrc () {
 	echo
 }
 
+update_zshrc () {
+	zshrcPath=$homeDirectory/.zshrc
+
+	if grep -Fxq "# spcmnd's custom config" $zshrcPath
+	then
+    		echo
+		echo "[*] Config is already loaded!"
+	else
+		echo
+		echo "[*] Adding custom config to .zshrc..."
+		echo "" >> $zshrcPath
+		echo "# spcmnd's custom config" >> $zshrcPath
+		echo "export SPCMNDCONFIGPATH=\"$homeDirectory/Documents/dotfiles\"" >> $zshrcPath
+		echo "source \"\$SPCMNDCONFIGPATH/.bashrc\"" >> $zshrcPath
+		echo "export PATH=\$PATH:/opt/bin" >> $zshrcPath
+		echo "" >> $zshrcPath
+	fi
+
+	echo "[*] Done."
+	echo
+}
+
 main () {
 	echo "---"
-	echo "Config Updater - V0.2.1 - By spcmnd"
+	echo "Config Updater - V0.3.0 - By spcmnd"
 	echo "---"
 	echo
 	ask_pull_latest_version
@@ -139,6 +180,11 @@ main () {
 	if ! grep -Fxq "# spcmnd's custom config" $homeDirectory/.bashrc
 	then
 		ask_update_bashrc
+	fi
+
+	if ! grep -Fxq "# spcmnd's custom config" $homeDirectory/.zshrc
+	then
+		ask_update_zshrc
 	fi
 }
 
