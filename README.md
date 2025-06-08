@@ -1,13 +1,11 @@
-# spcmnd's custom configuration script
+# spcmnd's dotfiles
 
-This script load configuration and aliases to .bashrc or tmux.
+## Neovim
 
-## Usage
+The neovim configuration is coming from Kickstart.nvim, with my preferences that will change over time.
 
-Clone the repo and simply launch:
+## Tmux
 
-```bash
-bash update-config.sh
-```
+Basic configuration.
 
-And answer questions deciding what you need.
+Custom scripts are located in `/scripts`.

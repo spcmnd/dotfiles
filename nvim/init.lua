@@ -1,0 +1,2 @@
+require("kickstart")
+-- require("spacemind")
